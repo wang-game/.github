@@ -22,7 +22,7 @@ character.draw();
 // // 장애물
 class Obs {
   constructor() {
-    (this.x = 400), (this.y = 300), (this.width = 50), (this.height = 50);
+    (this.width = 50 +Random(-25, 50)), (this.height = 50 +Random(-25, 50)), (this.x = 400), (this.y = 350 -this.height)
   }
   draw() {
     ctx.fillStyle = "red";
@@ -31,3 +31,10 @@ class Obs {
 }
 let obs = new Obs();
 obs.draw();
+
+//장애물 렌덤 크기 범위
+function Random(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+};
